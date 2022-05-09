@@ -1,0 +1,65 @@
+{
+  "type": "page",
+  "regions": ["body", "toolbar", "header"],
+  "body": [
+    {
+      "type": "form",
+      "api": "/api/form",
+      "body": [
+        {
+          "type": "input-text",
+          "name": "name",
+          "label": "姓名："
+        },
+        {
+          "name": "email",
+          "type": "input-email",
+          "label": "邮箱："
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "body": [
+        {
+          "type": "radios",
+          "name": "foo",
+          "label": false,
+          "options": [
+            {
+              "label": "类型1",
+              "value": 1
+            },
+            {
+              "label": "类型2",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "type": "input-text",
+          "name": "text1",
+          "label": false,
+          "placeholder": "选中 类型1 时可见",
+          "visibleOn": "${foo == 1}"
+        },
+        {
+          "type": "input-text",
+          "name": "text2",
+          "label": false,
+          "placeholder": "选中 类型2 时不可点",
+          "disabledOn": "${foo == 2}"
+        }
+      ]
+    },
+    {
+      "type": "action",
+      "label": "弹个框",
+      "actionType": "dialog",
+      "dialog": {
+        "title": "弹框",
+        "body": "Hello World!"
+      }
+    }
+  ]
+}

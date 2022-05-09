@@ -1,0 +1,9 @@
+{
+  "type": "page",
+  "regions": ["body", "toolbar", "header"],
+  "title": "自定义组件示例",
+  "body": {
+    "type": "my-renderer",
+    "tip": "简单示例"
+  }
+}

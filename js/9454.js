@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_amis_admin=self.webpackChunkreact_amis_admin||[]).push([[9454],{79454:function(e,n,a){a.r(n);var i=a(85893);n.default=function(e){e.name;return(0,i.jsx)("div",{children:(0,i.jsx)("h2",{children:"404"})})}}}]);
