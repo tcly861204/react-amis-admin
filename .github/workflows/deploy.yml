@@ -1,7 +1,7 @@
 name: REACT_AMIS_ADMIN
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   deploy:
