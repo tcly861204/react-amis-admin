@@ -1,0 +1,39 @@
+name: REACT_AMIS_ADMIN
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js v16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+
+      - name: Yarn
+        run: npm install yarn -g
+
+      - name: Install
+        run: yarn install # 安装依赖
+
+      - name: Build
+        run: npm run build # 打包
+
+      - name: Copy
+        run: cp README.md dist
+
+      - name: Ls
+        run: ls
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3 # 使用部署到 GitHub pages 的 action
+        with:
+          # 发布到指定分支
+          BRANCH: gh-pages
+          # 构建成果所在目录,默认位置都是在根目录
+          FOLDER: ./dist

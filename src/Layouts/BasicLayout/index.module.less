@@ -1,0 +1,51 @@
+.container {
+  height: 100vh;
+  .avatar {
+    cursor: pointer;
+
+    span {
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+  }
+  :global {
+    .ant-layout-content {
+      max-height: 100vh;
+      overflow-y: scroll;
+      margin: 0;
+      padding: 15px;
+      box-sizing: border-box;
+      &::-webkit-scrollbar {
+        width: 0.5rem;
+        height: 0.5rem;
+        background: hsla(0, 0%, 100%, 0.6);
+      }
+      &::-webkit-scrollbar-track {
+        border-radius: 0;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(95, 95, 95, 0.4);
+        transition: all 0.2s;
+        border-radius: 0.5rem;
+        &:hover {
+          background-color: rgba(95, 95, 95, 0.7);
+        }
+      }
+    }
+    .ant-pro-page-container {
+      margin: 0;
+    }
+    .ant-pro-global-footer {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+.menu_box {
+  :global {
+    .anticon {
+      margin-right: 8px;
+    }
+  }
+}

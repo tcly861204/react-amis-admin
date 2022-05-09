@@ -1,0 +1,114 @@
+@import 'antd/dist/antd.less';
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.ice-container {
+  min-height: 100%;
+}
+
+.body_container {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.cxd-Layout--headerFixed .cxd-Layout-header {
+  z-index: 100;
+}
+
+.editor-header {
+  position: relative;
+  text-align: right;
+  background-color: #001529;
+  > .logo {
+    float: left;
+    padding: 12px 0 0 15px;
+    img {
+      width: 24px;
+      float: left;
+      margin-right: 8px;
+    }
+    span {
+      color: #fff;
+      font-size: 18px;
+      position: relative;
+      top: -1px;
+    }
+  }
+  > .editor-preview {
+    display: inline-block;
+    line-height: 50px;
+    margin-right: 15px;
+    color: #c1c4c9;
+  }
+}
+
+.editor-header-btns {
+  display: inline-block;
+  white-space: nowrap;
+  > .btn-item {
+    user-select: none;
+    cursor: pointer;
+    display: inline-block;
+    border-left: 1px solid #595c65;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #c1c4c9;
+
+    > svg {
+      display: inline-block;
+      fill: #c1c4c9;
+      width: 20px;
+      position: relative;
+      top: 4px;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: rgb(46, 50, 67);
+
+      > svg {
+        fill: #fff;
+      }
+    }
+
+    &.disabled {
+      color: #8b8e99;
+      pointer-events: none;
+      cursor: default;
+
+      > svg {
+        fill: #8b8e99;
+      }
+    }
+  }
+}
+
+.cxd-Spinner {
+  display: flex;
+  height: 100%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.scrollbar {
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: hsla(0, 0%, 100%, 0.6);
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(95, 95, 95, 0.4);
+    transition: all 0.2s;
+    border-radius: 0.5rem;
+    &:hover {
+      background-color: rgba(95, 95, 95, 0.7);
+    }
+  }
+}

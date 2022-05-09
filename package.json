@@ -1,0 +1,67 @@
+{
+  "name": "react-amis-admin",
+  "version": "0.0.1",
+  "description": "amis",
+  "dependencies": {
+    "@ant-design/icons": "^4.0.2",
+    "@ant-design/pro-descriptions": "^1.10.32",
+    "@ant-design/pro-form": "^1.50.0",
+    "@ant-design/pro-layout": "^6.5.1",
+    "@ant-design/pro-table": "^2.61.9",
+    "@types/numeral": "^2.0.2",
+    "amis": "1.9",
+    "amis-editor": "4.1.0-beta.4",
+    "antd": "^4.0.0",
+    "axios": "^0.27.2",
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.10.7",
+    "jest": "^27.4.4",
+    "lodash": "^4.17.21",
+    "numeral": "^2.0.6",
+    "prop-types": "^15.5.8",
+    "qs": "^6.10.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@iceworks/spec": "^1.0.1",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "build-plugin-antd": "^0.1.2",
+    "build-plugin-ignore-style": "^0.1.0",
+    "cors": "^2.8.5",
+    "eslint": "^7.30.0",
+    "express": "^4.18.1",
+    "husky": "^4.3.8",
+    "ice.js": "^2.0.0",
+    "lint-staged": "^10.5.4",
+    "stylelint": "^13.1.0"
+  },
+  "scripts": {
+    "service": "node ./service/index.js",
+    "start": "icejs start --mode dev --port=8080",
+    "dev": "icejs start --mode dev --port=3000",
+    "build:daily": "icejs build --mode daily",
+    "build": "icejs build --mode prod",
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint --cache --ext .js,.jsx ./",
+    "fix": "eslint --fix --ext .js,.jsx,.tsx ./src",
+    "stylelint": "stylelint ./**/*.less",
+    "lint-staged": "lint-staged",
+    "lint-commit": "commitlint -E HUSKY_GIT_PARAMS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/antd-lite"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "npm run lint-commit",
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "private": true,
+  "originTemplate": "@icedesign/ice-antd-scaffold"
+}
