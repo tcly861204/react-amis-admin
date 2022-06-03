@@ -37,3 +37,11 @@ jobs:
           BRANCH: gh-pages
           # 构建成果所在目录,默认位置都是在根目录
           FOLDER: ./dist
+
+      - name: Preview
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          REPOSITORY_NAME: tcly861204/preview.github.io
+          BRANCH: main
+          FOLDER: ./dist
