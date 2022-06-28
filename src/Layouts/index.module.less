@@ -1,8 +1,6 @@
 .container {
-  height: 100vh;
   .avatar {
     cursor: pointer;
-
     span {
       margin-left: 10px;
       vertical-align: middle;
@@ -10,7 +8,7 @@
   }
   :global {
     .ant-layout-content {
-      max-height: 100vh;
+      max-height: calc(100vh - 48px);
       overflow-y: scroll;
       margin: 0;
       padding: 15px;

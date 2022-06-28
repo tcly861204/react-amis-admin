@@ -8,7 +8,7 @@ const asideMenuConfig = [
   },
   {
     name: '表单',
-    path: '/app',
+    path: '/form',
     icon: SnippetsOutlined,
     children: [
       {
@@ -26,6 +26,17 @@ const asideMenuConfig = [
       {
         name: '输入提示',
         path: '/app/form/hint',
+      },
+    ],
+  },
+  {
+    name: '表格',
+    path: '/table',
+    icon: SnippetsOutlined,
+    children: [
+      {
+        name: '表格模式',
+        path: '/app/crud/table',
       },
     ],
   },

@@ -33,6 +33,15 @@ app.get('/api/app/form/full', async (req, res) => {
   });
 });
 
+app.get('/api/app/crud/table', async (req, res) => {
+  const data = await getStream('api/app_crud_table.json');
+  res.send({
+    code: 200,
+    msg: 'OK',
+    data: data,
+  });
+});
+
 app.get('/api/app/form/hint', async (req, res) => {
   const data = await getStream('api/app_form_hint.json');
   res.send({

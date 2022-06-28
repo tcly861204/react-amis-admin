@@ -1,6 +1,4 @@
 import { runApp, IAppConfig, APP_MODE } from 'ice';
-// import { message } from 'antd';
-// import _ from 'lodash';
 import { Spinner } from 'amis';
 
 const appConfig: IAppConfig = {

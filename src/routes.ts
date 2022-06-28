@@ -1,5 +1,5 @@
 import { IRouterConfig, lazy } from 'ice';
-import Layout from '@/Layouts/BasicLayout';
+import Layout from '@/Layouts/index';
 
 const Home = lazy(() => import('@/pages/Home'));
 const Editer = lazy(() => import('@/pages/Editor'));
@@ -30,8 +30,6 @@ const routerConfig: IRouterConfig[] = [
       {
         path: '/login',
         component: Login,
-        // wrappers: [WrapperPage, LoginWrapper],
-        // wrappers: [WrapperPage],
         pageConfig: {
           title: '登录页面',
         },

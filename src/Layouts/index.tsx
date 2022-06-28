@@ -1,17 +1,12 @@
 import { createElement } from 'react';
-import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
+import ProLayout from '@ant-design/pro-layout';
 import { history, Link } from 'ice';
-import _ from 'lodash';
+import get from 'lodash/get';
 import { Avatar, Menu, Dropdown } from 'antd';
 import { EditOutlined, UserOutlined, LogoutOutlined, SettingOutlined } from '@ant-design/icons';
 import logo from '@/assets/logo.png';
 import { asideMenuConfig } from './menuConfig';
 import styles from './index.module.less';
-
-// const loginOut = async () => {
-//   localStorage.setItem('token', '');
-//   history!.push('/login');
-// };
 
 const downMenu = (
   <Menu
@@ -39,12 +34,7 @@ const loopMenuItem = (menus) =>
   }));
 
 const BasicLayout = ({ children, location }) => {
-  // const [userState, userDispatchers] = appStore.useModel('user');
-  // const userId = localStorage.getItem('userId');
-  // useEffect(() => {
-  //   userDispatchers.userInfo(userId);
-  // }, []);
-  if (['/login', '/editor'].includes(_.get(location, 'pathname'))) {
+  if (['/login', '/editor'].includes(get(location, 'pathname'))) {
     return <div style={{ height: `${window.innerHeight}px` }}>{children}</div>;
   }
 
@@ -64,7 +54,7 @@ const BasicLayout = ({ children, location }) => {
       }}
       menuDataRender={() => loopMenuItem(asideMenuConfig)}
       headerContentRender={() => {
-        if (['/'].includes(_.get(location, 'pathname'))) {
+        if (['/'].includes(get(location, 'pathname'))) {
           return null;
         }
         return <EditOutlined className="pointer" onClick={handleEditor} />;
@@ -75,7 +65,6 @@ const BasicLayout = ({ children, location }) => {
             <Avatar style={{ cursor: 'pointer' }} shape="square" size="small" icon={<UserOutlined />} />
             <span>admin</span>
           </div>
-          {/* <span>{_.get(userState, 'user.nickName')}</span> */}
         </Dropdown>
       )}
       menuItemRender={(item, defaultDom) => {
