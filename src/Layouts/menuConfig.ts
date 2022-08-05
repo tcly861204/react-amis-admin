@@ -1,4 +1,11 @@
-import { DashboardOutlined, SnippetsOutlined, RadarChartOutlined } from '@ant-design/icons';
+import {
+  DashboardOutlined,
+  BgColorsOutlined,
+  InsertRowAboveOutlined,
+  SnippetsOutlined,
+  RadarChartOutlined,
+  PlaySquareOutlined,
+} from '@ant-design/icons';
 
 const asideMenuConfig = [
   {
@@ -40,7 +47,7 @@ const asideMenuConfig = [
   {
     name: '表格',
     path: '/table',
-    icon: SnippetsOutlined,
+    icon: InsertRowAboveOutlined,
     children: [
       {
         name: '表格模式',
@@ -81,7 +88,7 @@ const asideMenuConfig = [
   {
     name: '主题编辑器',
     path: '/app/theme',
-    icon: SnippetsOutlined,
+    icon: BgColorsOutlined,
   },
   {
     name: '图表',
@@ -101,7 +108,7 @@ const asideMenuConfig = [
   {
     name: '视频',
     path: '/app/video',
-    icon: SnippetsOutlined,
+    icon: PlaySquareOutlined,
   },
 ];
 
