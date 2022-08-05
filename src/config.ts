@@ -1,7 +1,7 @@
 const config = {
   dev: {
     appId: 'dev-idqq',
-    BASE_URL: '//localhost:3001/',
+    BASE_URL: '/',
   },
   daily: {
     BASE_URL: 'https://github.com/api',

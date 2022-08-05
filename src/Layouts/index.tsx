@@ -8,18 +8,30 @@ import logo from '@/assets/logo.png';
 import { asideMenuConfig } from './menuConfig';
 import styles from './index.module.less';
 
-const downMenu = (
+const onClick = ({ key }) => {
+  switch (key) {
+    case 'logout':
+      history!.push('/login');
+      break;
+    case 'settings':
+      // 设置
+      break;
+    default:
+      break;
+  }
+};
+const userDownMenu = (
   <Menu
-    className={styles.menu_box}
+    onClick={onClick}
     items={[
       {
-        label: '个人设置',
         key: 'settings',
+        label: <div style={{ width: 90 }}>{'个人设置'}</div>,
         icon: <SettingOutlined />,
       },
       {
-        label: '退出登录',
         key: 'logout',
+        label: <div style={{ width: 90 }}>{'退出登录'}</div>,
         icon: <LogoutOutlined />,
       },
     ]}
@@ -60,10 +72,10 @@ const BasicLayout = ({ children, location }) => {
         return <EditOutlined className="pointer" onClick={handleEditor} />;
       }}
       rightContentRender={() => (
-        <Dropdown overlay={downMenu} placement="bottomCenter" arrow>
-          <div className={styles.avatar}>
-            <Avatar style={{ cursor: 'pointer' }} shape="square" size="small" icon={<UserOutlined />} />
-            <span>admin</span>
+        <Dropdown overlay={userDownMenu}>
+          <div style={{ cursor: 'pointer' }}>
+            <Avatar size="small" icon={<UserOutlined />} />
+            <span style={{ marginLeft: 5 }}>admin</span>
           </div>
         </Dropdown>
       )}

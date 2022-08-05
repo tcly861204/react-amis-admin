@@ -3,10 +3,10 @@ import Amis from '@/components/Amis';
 import store from '@/store';
 
 const APP = () => {
-  const [homeStore] = store.useModel('home');
+  const [{ schema }] = store.useModel('home');
   return (
     <div className={styles.container}>
-      <Amis schema={homeStore.schema} />
+      <Amis schema={schema} />
     </div>
   );
 };

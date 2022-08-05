@@ -20,13 +20,13 @@ export default {
         schema: null,
       });
       let api = pathname.substr(1);
-      if (APP_MODE !== 'dev') {
+      if (['dev', 'prod'].includes(APP_MODE)) {
         api = api.replace(/\//gi, '_');
         api += '.json';
       }
       const schema = await appService.initPage(api);
       dispatch.app.update({
-        schema: APP_MODE !== 'dev' ? schema : schema.data,
+        schema,
       });
     },
     async updateSchema(payload) {

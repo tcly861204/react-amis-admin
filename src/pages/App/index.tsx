@@ -5,15 +5,15 @@ import { Spinner } from 'amis';
 import { useHistory } from 'ice';
 
 const App = () => {
-  const [appStore, appDispatchers] = store.useModel('app');
+  const [{ schema }, { initPage }] = store.useModel('app');
   const history = useHistory();
   useEffect(() => {
-    appDispatchers.initPage(history.location);
+    initPage(history.location);
   }, [history.location]);
-  if (appStore.schema) {
-    return <Amis schema={appStore.schema} />;
+  if (schema) {
+    return <Amis schema={schema} />;
   }
-  return <Spinner />;
+  return <Spinner className="pt150" />;
 };
 
 export default App;

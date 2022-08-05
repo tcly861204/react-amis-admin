@@ -7,7 +7,7 @@ const appConfig: IAppConfig = {
   },
   router: {
     type: APP_MODE === 'dev' ? 'browser' : 'hash',
-    fallback: <Spinner />,
+    fallback: <Spinner className="pt150" />,
   },
 };
 

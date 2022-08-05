@@ -4,7 +4,7 @@
   "body": [
     {
       "type": "form",
-      "api": "/api/form",
+      "api": "https://aisuda.bce.baidu.com/api/form",
       "body": [
         {
           "type": "input-text",
