@@ -8,7 +8,7 @@
       "columns": [
         {
           "type": "form",
-          "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
+          "api": "https://aisuda.bce.baidu.com/amis/api/mock2/form/saveForm?waitSeconds=2",
           "title": "常规模式",
           "mode": "normal",
           "body": [
@@ -41,7 +41,7 @@
         },
         {
           "type": "form",
-          "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
+          "api": "https://aisuda.bce.baidu.com/amis/api/mock2/form/saveForm?waitSeconds=2",
           "title": "常规模式 input md 尺寸",
           "mode": "normal",
           "body": [
@@ -81,7 +81,7 @@
       "columns": [
         {
           "type": "form",
-          "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
+          "api": "https://aisuda.bce.baidu.com/amis/api/mock2/form/saveForm?waitSeconds=2",
           "title": "水平模式，左右摆放 左右比率分配 ",
           "mode": "horizontal",
           "autoFocus": false,
@@ -121,7 +121,7 @@
         },
         {
           "type": "form",
-          "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
+          "api": "https://aisuda.bce.baidu.com/amis/api/mock2/form/saveForm?waitSeconds=2",
           "title": "水平模式，左右摆放 左侧固定宽度 input md 尺寸",
           "mode": "horizontal",
           "autoFocus": false,
@@ -232,7 +232,7 @@
     },
     {
       "type": "form",
-      "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
+      "api": "https://aisuda.bce.baidu.com/amis/api/mock2/form/saveForm?waitSeconds=2",
       "title": "内联模式",
       "mode": "inline",
       "autoFocus": false,
@@ -268,7 +268,7 @@
     },
     {
       "type": "form",
-      "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
+      "api": "https://aisuda.bce.baidu.com/amis/api/mock2/form/saveForm?waitSeconds=2",
       "title": "常规模式下用数组包起来还能控制一行显示多个",
       "mode": "normal",
       "autoFocus": false,
@@ -390,7 +390,7 @@
     },
     {
       "type": "form",
-      "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
+      "api": "https://aisuda.bce.baidu.com/amis/api/mock2/form/saveForm?waitSeconds=2",
       "title": "水平模式用数组包起来也能控制一行显示多个",
       "mode": "horizontal",
       "autoFocus": false,
@@ -572,7 +572,7 @@
     },
     {
       "type": "form",
-      "api": "/amis/api/mock2/form/saveForm?waitSeconds=2",
+      "api": "https://aisuda.bce.baidu.com/amis/api/mock2/form/saveForm?waitSeconds=2",
       "title": "Inline form  用数组包起来还能控制一行显示多个",
       "mode": "inline",
       "submitText": null,
