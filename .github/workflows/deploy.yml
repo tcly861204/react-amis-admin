@@ -25,7 +25,10 @@ jobs:
         run: npm run build # 打包
 
       - name: Copy
-        run: cp README.md dist
+        run: |
+          cp README.md dist
+          cp .gitignore dist
+          cp -r public/app/form/static dist/static
 
       - name: Ls
         run: ls
