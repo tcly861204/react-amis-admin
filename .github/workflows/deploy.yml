@@ -10,10 +10,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js v20
+      - name: Setup Node.js v18
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18.x'
 
       - name: pnpm
         run: npm install pnpm -g
