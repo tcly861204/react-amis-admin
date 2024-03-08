@@ -1,14 +1,10 @@
-import { runApp, IAppConfig, APP_MODE } from 'ice';
-import { Spinner } from 'amis';
-
-const appConfig: IAppConfig = {
-  app: {
-    rootId: 'ice-container',
-  },
-  router: {
-    type: APP_MODE === 'dev' ? 'browser' : 'hash',
-    fallback: <Spinner className="pt150" />,
-  },
-};
-
-runApp(appConfig);
+import { BrowserRouter, HashRouter } from 'react-router-dom'
+import routes from '@/routes'
+import { isDev } from './utils/utils'
+const App = () => {
+  if (!isDev) {
+    return <HashRouter>{routes()}</HashRouter>
+  }
+  return <BrowserRouter basename={'/'}>{routes()}</BrowserRouter>
+}
+export default App

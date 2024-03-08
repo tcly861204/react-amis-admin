@@ -8,18 +8,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js v16.x
-        uses: actions/setup-node@v1
+      - name: Setup Node.js v20
+        uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: '20'
 
-      - name: Yarn
-        run: npm install yarn -g
+      - name: pnpm
+        run: npm install pnpm -g
 
       - name: Install
-        run: yarn install # 安装依赖
+        run: pnpm install # 安装依赖
 
       - name: Build
         run: npm run build # 打包

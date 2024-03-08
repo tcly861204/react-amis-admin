@@ -1,4 +1,5 @@
 {
+  "title": "表单类型汇总",
   "type": "page",
   "regions": ["body", "toolbar", "header"],
   "body": [
