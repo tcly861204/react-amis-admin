@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Loading from '@/components/Loading'
 import { lazy, Suspense } from 'react'
 import Layout from '@/layout'
@@ -16,7 +16,7 @@ const Router = () => {
     <Routes>
       <Route path='/login' element={<Login />}></Route>
       <Route path='/' element={<Layout />}>
-        <Route path='/' element={lazyLoad(lazy(async () => import('@/pages/Home/index.tsx')))}></Route>
+        <Route path='/' element={<Navigate to="/dashboard" />}></Route>
         <Route path='/*' element={lazyLoad(lazy(async () => import('@/pages/Admin/index.tsx')))}></Route>
       </Route>
     </Routes>

@@ -33,6 +33,7 @@ const App = () => {
     </Layout.Header>
     <Layout>
       <Layout.Sider
+        width={220}
         defaultCollapsed={collapse}
         collapsible={true}
         onCollapse={onCollapse}
