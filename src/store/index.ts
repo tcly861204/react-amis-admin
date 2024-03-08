@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import { Schema } from 'amis'
 import ajax from '@/utils/ajax'
+import { isDev } from '@/utils/utils'
 
 interface Store {
   schema: Schema
@@ -17,7 +18,7 @@ const useStore = create<Store>((set) => ({
     set({loading: true})
     let api = path.slice(1);
     api = api.replace(/\//gi, '_') + '.json';
-    ajax.get(`/public/api/${api}`).then(res => {
+    ajax.get(`${isDev ? '/public' : ''}/api/${api}`).then(res => {
       set({
         schema: res.data
       })
