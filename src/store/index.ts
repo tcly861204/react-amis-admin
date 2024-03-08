@@ -18,7 +18,7 @@ const useStore = create<Store>((set) => ({
     set({loading: true})
     let api = path.slice(1);
     api = api.replace(/\//gi, '_') + '.json';
-    ajax.get(`${isDev ? '/public' : ''}/api/${api}`).then(res => {
+    ajax.get(`${isDev ? '/public' : '/react-amis-admin'}/api/${api}`).then(res => {
       set({
         schema: res.data
       })

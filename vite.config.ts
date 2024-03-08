@@ -5,7 +5,7 @@ import path from 'path'
 export default defineConfig(({ mode })=> {
   const isProd = mode === 'production'
   return {
-    base: isProd ? './' : '/',
+    base: isProd ? '/react-amis-admin/' : '/',
     server: {
       port: 3000,
       open: true,
