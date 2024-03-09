@@ -1,4 +1,6 @@
-import { Form, Input, Button, Checkbox } from '@arco-design/web-react'
+import { Form, Input, Button, Checkbox, Message } from '@arco-design/web-react'
+import { useNavigate } from 'react-router-dom'
+import { uuid } from '@/utils/utils'
 import {
   IconUser,
   IconLock
@@ -8,12 +10,17 @@ import { useCallback } from 'react'
 const FormItem = Form.Item
 
 const Login = () => {
+  const navigate = useNavigate()
   const [form] = Form.useForm();
   const onSubmit = useCallback(() => {
     form.validate().then(res => {
-      console.log(res)
+      if (res.username === 'admin' && res.password === '123456') {
+        Message.success('登录成功')
+        localStorage.setItem('token', uuid())
+        navigate('/')
+      }
     })
-  }, [form])
+  }, [navigate, form])
   return <section className={styles.login}>
     <div className={styles.content}>
       <Form

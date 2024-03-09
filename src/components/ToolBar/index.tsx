@@ -1,4 +1,5 @@
-import { Avatar, Button, Badge, Input, Space } from '@arco-design/web-react'
+import { Avatar, Button, Dropdown, Badge, Input, Menu, Space } from '@arco-design/web-react'
+import { useNavigate } from 'react-router-dom'
 import {
   IconLanguage,
   IconUser,
@@ -9,7 +10,22 @@ import {
 } from '@arco-design/web-react/icon'
 import styles from './index.module.scss'
 const InputSearch = Input.Search
+
 const Toolbar = () => {
+  const navigate = useNavigate()
+  const handleClick = (key: string) => {
+    switch (key) {
+      case 'logout':
+        localStorage.clear()
+        navigate('/login')
+        break
+    }
+  }
+  const dropList = (
+    <Menu onClickMenuItem={handleClick}>
+      <Menu.Item key='logout'>退出</Menu.Item>
+    </Menu>
+  );
   return <div className={styles.toolbar}>
     <Space size="medium">
       <li>
@@ -37,9 +53,11 @@ const Toolbar = () => {
         <Button shape='circle' icon={<IconSkin style={{ fontSize: 14 }} />} />
       </li>
       <li>
-        <Avatar size={32} style={{ backgroundColor: '#3370ff' }}>
-          <IconUser style={{ fontSize: 18 }}/>
-        </Avatar>
+        <Dropdown droplist={dropList} trigger='click' position='br'>
+          <Avatar size={32} style={{ backgroundColor: '#3370ff', cursor: 'pointer' }}>
+            <IconUser style={{ fontSize: 18 }}/>
+          </Avatar>
+        </Dropdown>
       </li>
     </Space>
   </div>

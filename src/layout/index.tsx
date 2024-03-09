@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { Layout } from '@arco-design/web-react'
 import {
   IconMenuUnfold,
@@ -9,11 +9,12 @@ import Sidebar from '@/components/Sidebar'
 import Toolbar from '@/components/ToolBar'
 import logoImg from '@/assets/logo.png'
 import useStore from '@/store/layout'
-import { useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 import menuConfig from './menu'
 import styles from './index.module.scss'
 
 const App = () => {
+  const { pathname } = useLocation()
   const navigate = useNavigate()
   const { collapse, updateField } = useStore(state => state)
   const onCollapse = useCallback((collapsed: boolean) => {
@@ -22,6 +23,12 @@ const App = () => {
   const goHome = useCallback(() => {
     navigate('/')
   }, [navigate])
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (!pathname.includes('login') && token === null) {
+      navigate('/login')
+    }
+  }, [navigate, pathname])
   return <Layout className={styles.container}>
     <Layout.Header>
       <div className={styles.navbar}>
