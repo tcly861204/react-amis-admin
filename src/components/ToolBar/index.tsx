@@ -6,6 +6,7 @@ import {
   IconNotification,
   IconMoon,
   IconSkin,
+  IconGithub,
   IconSettings
 } from '@arco-design/web-react/icon'
 import styles from './index.module.scss'
@@ -58,6 +59,9 @@ const Toolbar = () => {
             <IconUser style={{ fontSize: 18 }}/>
           </Avatar>
         </Dropdown>
+      </li>
+      <li>
+        <IconGithub className='pointer' onClick={() => window.open('https://github.com/tcly861204', '_blank')} style={{ fontSize: 30 }} />
       </li>
     </Space>
   </div>

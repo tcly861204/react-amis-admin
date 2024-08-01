@@ -3,6 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": {
+    "name": "tcly861204",
+    "email": "tcly861204@hotmail.com",
+    "url": "https://github.com/tcly861204"
+  },
   "scripts": {
     "dev": "vite --mode development",
     "build": "tsc && vite build",
